@@ -10,6 +10,9 @@ namespace Laboratorio2RobertoVergaraC
     {
         static void Main(string[] args)
         {
+            Cancion c1 = new Cancion("Lights", "Lights", "Ellie Goulding", "Pop");
+            Console.WriteLine(c1.Informacion());
+            Console.ReadKey();
         }
     }
 }
