@@ -10,9 +10,10 @@ namespace Laboratorio2RobertoVergaraC
     {
         List<Cancion> songs = new List<Cancion>();
 
+        private List<Playlist> playlists = new List<Playlist>();
+        
         public Espotifai()
         {
-
         }
 
         public bool AgregarCancion(Cancion cancion)
@@ -135,6 +136,41 @@ namespace Laboratorio2RobertoVergaraC
                 }
             }
         }
+
+        public bool GenerarPlaylist(string criterio, string valorCriterio, string nombrePLaylist)
+        {
+            Playlist nuevaPlaylist = new Playlist(nombrePLaylist, this.CancionesPorCriterio(criterio, valorCriterio), criterio, valorCriterio);
+            for (int i = 0; i < playlists.Count; i++)
+            {
+                if (nuevaPlaylist.InformacionPlaylistNombre() == playlists[i].InformacionPlaylistNombre())
+                {
+                    Console.WriteLine("\nNo se puede agregar la playlist, ya que existe otra con el mismo nombre");
+                    return false;
+                }
+                else if (nuevaPlaylist.InformacionPlaylistCriterioyValor() == playlists[i].InformacionPlaylistCriterioyValor())
+                {
+                    Console.WriteLine("\nNo se puede agregar la playlist, ya que existe otra con el mismo criterio y valor");
+                    return false;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            playlists.Add(nuevaPlaylist);
+            return true;
+        }
+
+        public string VerMisPLaylists()
+        {
+            foreach (Playlist i in playlists)
+            {
+                Console.WriteLine("Nombre PLaylist: " + i.InformacionPlaylistNombre() + "\nY las canciones que contiene son: \n");
+                Console.WriteLine(i.InformacionCanciones());
+            }
+            return "";
+        }
+       
 
     }
 }
