@@ -46,10 +46,10 @@ namespace Laboratorio2RobertoVergaraC
                     string criterio = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el valor que desea:");
                     string valor = Console.ReadLine();
-                    List<Cancion> Playlist = spotify.CancionesPorCriterio(criterio, valor);
-                    for (int i= 0; i < Playlist.Count; i++)
+                    List<Cancion> ListaCanciones = spotify.CancionesPorCriterio(criterio, valor);
+                    for (int i= 0; i < ListaCanciones.Count; i++)
                     {
-                        Console.WriteLine("\n" + Playlist[i].Informacion() + "\n");
+                        Console.WriteLine("\n" + ListaCanciones[i].Informacion() + "\n");
                     }
                 }
                 else
