@@ -27,14 +27,14 @@ namespace Laboratorio2RobertoVergaraC
         {
             for (int i = 0; i < this.playlist.Count; i++)
             {
-                Console.WriteLine(this.playlist[i].Informacion());
+                Console.WriteLine("\n" + this.playlist[i].Informacion());
             }
             return "";
         }
 
         public string InformacionPlaylistNombre()
         {
-            return "Nombre Playlist: " + this.name + "\n";
+            return "\nNombre Playlist: " + this.name + "\n";
         }
 
         public string InformacionPlaylistCriterioyValor()

@@ -17,7 +17,7 @@ namespace Laboratorio2RobertoVergaraC
             string option;
             while (contador != 0)
             {
-                Console.WriteLine("(a) Ver todas las canciones \n" + "(b) Agregar una canción \n" + "(c) Salir del programa \n" + "(d) Ver canciones por criterio \n");
+                Console.WriteLine("(a) Ver todas las canciones \n" + "(b) Agregar una canción \n" + "(c) Ver canciones por criterio \n" + "(d) Crear Playlist \n" + "(e) Ver mis Playlist \n" + "(f) Salir del Programa \n");
                 option = Console.ReadLine();
                 if (option == "a")
                 {
@@ -38,10 +38,6 @@ namespace Laboratorio2RobertoVergaraC
                 }
                 else if (option == "c")
                 {
-                    contador = 0;
-                }
-                else if (option == "d")
-                {
                     Console.WriteLine("\nSeleccione el criterio que desea (nombre, álbum, artista, género):");
                     string criterio = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el valor que desea:");
@@ -51,6 +47,27 @@ namespace Laboratorio2RobertoVergaraC
                     {
                         Console.WriteLine("\n" + ListaCanciones[i].Informacion() + "\n");
                     }
+                }
+                else if (option == "d")
+                {
+                    Console.WriteLine("\nSeleccione el nombre que desea para su playlist:");
+                    string nombrePlaylist = Console.ReadLine();
+                    Console.WriteLine("\nSeleccione el criterio que desea para su playlist:");
+                    string criterioPlaylist = Console.ReadLine();
+                    Console.WriteLine("\nSeleccione el valor que desea para su playlist:");
+                    string valorPlaylist = Console.ReadLine();
+                    List<Cancion> ListaCanciones2 = spotify.CancionesPorCriterio(criterioPlaylist, valorPlaylist);
+                    Playlist playlist = new Playlist(nombrePlaylist,ListaCanciones2,criterioPlaylist,valorPlaylist);
+                    Console.WriteLine(playlist.InformacionPlaylistNombre());
+                    Console.WriteLine(playlist.InformacionCanciones());
+                }
+                else if (option == "e")
+                {
+                    Console.WriteLine(spotify.VerMisPLaylists());
+                }
+                else if (option == "f")
+                {
+                    contador = 0;
                 }
                 else
                 {
