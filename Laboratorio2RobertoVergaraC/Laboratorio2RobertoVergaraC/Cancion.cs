@@ -23,11 +23,7 @@ namespace Laboratorio2RobertoVergaraC
 
         public string Informacion()
         {
-            Console.WriteLine("Nombre: " + this.name);
-            Console.WriteLine("Álbum: " + this.album);
-            Console.WriteLine("Artista: " + this.artist);
-            Console.WriteLine("Género: " + this.genre);
-            return "";
+            return ("Nombre: " + this.name + "\n" + "Álbum: " + this.album + "\n" + "Artista: " + this.artist + "\n" + "Género: " + this.genre);
         }
     }
 }

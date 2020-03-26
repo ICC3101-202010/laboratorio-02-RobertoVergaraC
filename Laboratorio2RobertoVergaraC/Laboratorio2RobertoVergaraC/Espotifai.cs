@@ -19,25 +19,27 @@ namespace Laboratorio2RobertoVergaraC
         {
             for (int i = 0; i < songs.Count; i++)
             {
-                if (cancion == songs[i])
+                if (cancion.Informacion() == songs[i].Informacion())
                     {
-                        songs.Add(cancion);
-                        return true; 
+                        return false;
                     }
-                else 
-                    {
-                        continue;
-                    }
+                else
+                {
+                    continue;
+                }
             }
-            return false;
+            
+            songs.Add(cancion);
+            return true;
         }
 
         public void VerCanciones()
         {
-            Console.WriteLine("La lista de canciones es:");
+            Console.WriteLine("\nLa lista de canciones es:");
             for (int i = 0; i < songs.Count; i++)
             {
-                Console.WriteLine(songs[i]);
+                Console.WriteLine(songs[i].Informacion());
+                Console.WriteLine();
             }
         }
     }
