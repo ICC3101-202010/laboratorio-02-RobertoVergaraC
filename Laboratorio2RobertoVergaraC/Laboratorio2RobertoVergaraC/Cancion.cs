@@ -8,10 +8,10 @@ namespace Laboratorio2RobertoVergaraC
 {
     class Cancion
     {
-        private string name;
-        private string album;
-        private string artist;
-        private string genre;
+        public string name;
+        public string album;
+        public string artist;
+        public string genre;
         
         public Cancion(string Name, string Album, string Artist, string Genre)
         {

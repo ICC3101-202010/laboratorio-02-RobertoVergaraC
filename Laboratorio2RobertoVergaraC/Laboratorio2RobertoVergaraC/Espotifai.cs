@@ -35,11 +35,104 @@ namespace Laboratorio2RobertoVergaraC
 
         public void VerCanciones()
         {
-            Console.WriteLine("\nLa lista de canciones es:");
+            Console.WriteLine("\nLa lista de canciones es:\n");
             for (int i = 0; i < songs.Count; i++)
             {
                 Console.WriteLine(songs[i].Informacion());
                 Console.WriteLine();
+            }
+        }
+
+        public Cancion[] CancionesPorCriterio(String criterio, String valor) //critero = género ; valor = pop
+        {
+            while (true)               
+            {
+                Cancion[] playlist = { };
+                if (criterio == "nombre" || criterio == "Nombre" || criterio == "NOMBRE")
+                {
+                    for (int i = 0; i < songs.Count; i++)
+                    {
+                        if (songs[i].name == valor)
+                        {
+                            playlist.Append(songs[i]);
+                        }       
+                    }
+                    if (playlist.Length == 0)
+                    {
+                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        return playlist;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        return playlist;
+                    }
+                }
+                else if (criterio == "álbum" || criterio == "album" || criterio == "Álbum" || criterio == "Album" || criterio == "ÁLBUM" || criterio == "ALBUM")
+                {
+                    for (int i = 0; i < songs.Count; i++)
+                    {
+                        if (songs[i].album == valor)
+                        {
+                            playlist.Append(songs[i]);
+                        }
+                    }
+                    if (playlist.Length == 0)
+                    {
+                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        return playlist;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        return playlist;
+                    }
+                }
+                else if (criterio == "artista" || criterio == "Artista" || criterio == "ARTISTA")
+                {
+                    for (int i = 0; i < songs.Count; i++)
+                    {
+                        if (songs[i].artist == valor)
+                        {
+                            playlist.Append(songs[i]);
+                        }
+                    }
+                    if (playlist.Length == 0)
+                    {
+                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        return playlist;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        return playlist;
+                    }
+                }
+                else if (criterio == "género" || criterio == "genero" || criterio == "Género" || criterio == "Genero" || criterio == "GÉNERO" || criterio == "GENERO")
+                {
+                    for (int i = 0; i < songs.Count; i++)
+                    {
+                        if (songs[i].genre == valor)
+                        {
+                            playlist.Append(songs[i]);
+                        }
+                    }
+                    if (playlist.Length == 0)
+                    {
+                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        return playlist;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        return playlist;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("¡Error! El criterio seleccionado no existe, por lo tanto se le retornara su playlist vacia\n");
+                    return playlist;
+                }
             }
         }
     }

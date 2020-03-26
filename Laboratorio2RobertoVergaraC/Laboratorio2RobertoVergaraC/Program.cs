@@ -26,14 +26,14 @@ namespace Laboratorio2RobertoVergaraC
                 else if (option == "b")
                 {
                     Console.WriteLine("\nSeleccione el nombre de la canción:");
-                    string name = Console.ReadLine();
+                    string Name = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el álbum de la canción:");
-                    string album = Console.ReadLine();
+                    string Album = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el artista de la canción:");
-                    string artist = Console.ReadLine();
+                    string Artist = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el género de la canción:");
-                    string genre = Console.ReadLine();
-                    Cancion cancion = new Cancion(name, album, artist, genre);
+                    string Genre = Console.ReadLine();
+                    Cancion cancion = new Cancion(Name, Album, Artist, Genre);
                     Console.WriteLine("\n" + spotify.AgregarCancion(cancion) + "\n");
                 }
                 else if (option == "c")
