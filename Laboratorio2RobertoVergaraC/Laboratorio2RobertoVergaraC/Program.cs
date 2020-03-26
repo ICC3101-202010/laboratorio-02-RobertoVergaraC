@@ -10,14 +10,14 @@ namespace Laboratorio2RobertoVergaraC
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bienvenido! En el siguiente menu marque el número de la opción que quiera realizar:");
+            Console.WriteLine("¡Bienvenido! En el siguiente menu marque la letra de la opción que quiera realizar:");
 
             Espotifai spotify = new Espotifai();
             int contador = 1;
             string option;
             while (contador != 0)
             {
-                Console.WriteLine("(a) Ver todas las Canciones \n" + "(b) Agregar una Canción \n" + "(c) Salir del programa \n");
+                Console.WriteLine("(a) Ver todas las canciones \n" + "(b) Agregar una canción \n" + "(c) Salir del programa \n" + "(d) Ver canciones por criterio \n");
                 option = Console.ReadLine();
                 if (option == "a")
                 {
@@ -39,6 +39,18 @@ namespace Laboratorio2RobertoVergaraC
                 else if (option == "c")
                 {
                     contador = 0;
+                }
+                else if (option == "d")
+                {
+                    Console.WriteLine("\nSeleccione el criterio que desea (nombre, álbum, artista, género):");
+                    string criterio = Console.ReadLine();
+                    Console.WriteLine("\nSeleccione el valor que desea:");
+                    string valor = Console.ReadLine();
+                    List<Cancion> Playlist = spotify.CancionesPorCriterio(criterio, valor);
+                    for (int i= 0; i < Playlist.Count; i++)
+                    {
+                        Console.WriteLine("\n" + Playlist[i].Informacion() + "\n");
+                    }
                 }
                 else
                 {

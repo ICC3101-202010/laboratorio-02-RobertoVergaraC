@@ -8,22 +8,27 @@ namespace Laboratorio2RobertoVergaraC
 {
     class Cancion
     {
-        public string name;
-        public string album;
-        public string artist;
-        public string genre;
-        
+        private string name;
+        private string album;
+        private string artist;
+        private string genre;
+
+        public string Name { get => name; private set => name = value; }
+        public string Album { get => album; private set => album = value; }
+        public string Artist { get => artist; private set => artist = value; }
+        public string Genre { get => genre; private set => genre = value; }
+
         public Cancion(string Name, string Album, string Artist, string Genre)
         {
-            this.name = Name;
-            this.album = Album;
-            this.artist = Artist;
-            this.genre = Genre;
+            this.Name = Name;
+            this.Album = Album;
+            this.Artist = Artist;
+            this.Genre = Genre;
         }
 
         public string Informacion()
         {
-            return ("Nombre: " + this.name + "\n" + "Álbum: " + this.album + "\n" + "Artista: " + this.artist + "\n" + "Género: " + this.genre);
+            return ("Nombre: " + this.Name + "\n" + "Álbum: " + this.Album + "\n" + "Artista: " + this.Artist + "\n" + "Género: " + this.Genre);
         }
     }
 }

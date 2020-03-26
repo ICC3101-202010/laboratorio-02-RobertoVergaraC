@@ -12,23 +12,23 @@ namespace Laboratorio2RobertoVergaraC
 
         public Espotifai()
         {
-           
+
         }
-        
+
         public bool AgregarCancion(Cancion cancion)
         {
             for (int i = 0; i < songs.Count; i++)
             {
                 if (cancion.Informacion() == songs[i].Informacion())
-                    {
-                        return false;
-                    }
+                {
+                    return false;
+                }
                 else
                 {
                     continue;
                 }
             }
-            
+
             songs.Add(cancion);
             return true;
         }
@@ -43,28 +43,28 @@ namespace Laboratorio2RobertoVergaraC
             }
         }
 
-        public Cancion[] CancionesPorCriterio(String criterio, String valor) //critero = género ; valor = pop
+        public List<Cancion> CancionesPorCriterio(String criterio, String valor) //critero = género ; valor = pop
         {
-            while (true)               
+            List<Cancion> playlist = new List<Cancion>();
+            while (true)
             {
-                Cancion[] playlist = { };
                 if (criterio == "nombre" || criterio == "Nombre" || criterio == "NOMBRE")
                 {
                     for (int i = 0; i < songs.Count; i++)
                     {
-                        if (songs[i].name == valor)
+                        if (songs[i].Name == valor)
                         {
-                            playlist.Append(songs[i]);
-                        }       
+                            playlist.Add(songs[i]);
+                        }
                     }
-                    if (playlist.Length == 0)
+                    if (playlist.Count == 0)
                     {
-                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        Console.WriteLine("\nSu playlist con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
@@ -72,19 +72,19 @@ namespace Laboratorio2RobertoVergaraC
                 {
                     for (int i = 0; i < songs.Count; i++)
                     {
-                        if (songs[i].album == valor)
+                        if (songs[i].Album == valor)
                         {
-                            playlist.Append(songs[i]);
+                            playlist.Add(songs[i]);
                         }
                     }
-                    if (playlist.Length == 0)
+                    if (playlist.Count == 0)
                     {
-                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        Console.WriteLine("\nSu playlist con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
@@ -92,19 +92,19 @@ namespace Laboratorio2RobertoVergaraC
                 {
                     for (int i = 0; i < songs.Count; i++)
                     {
-                        if (songs[i].artist == valor)
+                        if (songs[i].Artist == valor)
                         {
-                            playlist.Append(songs[i]);
+                            playlist.Add(songs[i]);
                         }
                     }
-                    if (playlist.Length == 0)
+                    if (playlist.Count == 0)
                     {
-                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        Console.WriteLine("\nSu playlist con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
@@ -112,28 +112,29 @@ namespace Laboratorio2RobertoVergaraC
                 {
                     for (int i = 0; i < songs.Count; i++)
                     {
-                        if (songs[i].genre == valor)
+                        if (songs[i].Genre == valor)
                         {
-                            playlist.Append(songs[i]);
+                            playlist.Add(songs[i]);
                         }
                     }
-                    if (playlist.Length == 0)
+                    if (playlist.Count == 0)
                     {
-                        Console.WriteLine("No se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su playlist vacia\n");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("Su playlist con criterio " + criterio + "de valor " + valor + "es:\n");
+                        Console.WriteLine("\nSu playlist con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("¡Error! El criterio seleccionado no existe, por lo tanto se le retornara su playlist vacia\n");
+                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe, por lo tanto se le retornara su playlist vacia\n");
                     return playlist;
                 }
             }
         }
+
     }
 }
