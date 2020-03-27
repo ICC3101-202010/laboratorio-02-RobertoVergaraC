@@ -17,7 +17,7 @@ namespace Laboratorio2RobertoVergaraC
             string option;
             while (contador != 0)
             {
-                Console.WriteLine("(a) Ver todas las canciones \n" + "(b) Agregar una canción \n" + "(c) Ver canciones por criterio \n" + "(d) Crear Playlist \n" + "(e) Ver mis Playlist \n" + "(f) Salir del Programa \n");
+                Console.WriteLine("\n(a) Ver todas las canciones \n" + "(b) Agregar una canción \n" + "(c) Ver canciones por criterio \n" + "(d) Crear Playlist \n" + "(e) Ver mis Playlist \n" + "(f) Salir del Programa \n");
                 option = Console.ReadLine();
                 if (option == "a")
                 {
@@ -34,7 +34,7 @@ namespace Laboratorio2RobertoVergaraC
                     Console.WriteLine("\nSeleccione el género de la canción:");
                     string Genre = Console.ReadLine();
                     Cancion cancion = new Cancion(Name, Album, Artist, Genre);
-                    Console.WriteLine("\n" + spotify.AgregarCancion(cancion) + "\n");
+                    Console.WriteLine("\n" + spotify.AgregarCancion(cancion));
                 }
                 else if (option == "c")
                 {

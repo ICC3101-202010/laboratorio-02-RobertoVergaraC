@@ -130,7 +130,7 @@ namespace Laboratorio2RobertoVergaraC
                 }
                 else
                 {
-                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe, por lo tanto se le retornara su lista de canciones vacia\n");
+                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe\n");
                     return playlist;
                 }
             }
@@ -138,11 +138,6 @@ namespace Laboratorio2RobertoVergaraC
 
         public bool GenerarPlaylist(string criterio, string valorCriterio, string nombrePlaylist)
         {
-            if (criterio != "nombre" || criterio != "Nombre" || criterio != "NOMBRE" || criterio != "álbum" || criterio != "album" || criterio != "Álbum" || criterio != "Album" || criterio != "ÁLBUM" || criterio != "ALBUM" || criterio != "artista" || criterio != "Artista" || criterio != "ARTISTA" || criterio != "género" || criterio != "genero" || criterio != "Género" || criterio != "Genero" || criterio != "GÉNERO" || criterio != "GENERO")
-            {
-                Console.WriteLine("\nEl criterio que selecciono no existe\n");
-                return false;
-            }
             List<Cancion> lista = this.CancionesPorCriterio(criterio, valorCriterio);
             Playlist nuevaPlaylist = new Playlist(nombrePlaylist, lista);
             for (int i = 0; i < playlists.Count; i++)
@@ -156,6 +151,10 @@ namespace Laboratorio2RobertoVergaraC
                 {
                     continue;
                 }
+            }
+            if (lista.Count == 0)
+            {
+                return false;
             }
             nuevaPlaylist.InformacionPlaylist();
             playlists.Add(nuevaPlaylist);
