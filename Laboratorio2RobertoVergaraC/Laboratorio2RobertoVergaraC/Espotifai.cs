@@ -138,8 +138,13 @@ namespace Laboratorio2RobertoVergaraC
 
         public bool GenerarPlaylist(string criterio, string valorCriterio, string nombrePlaylist)
         {
-            Espotifai espotifai = new Espotifai();
-            Playlist nuevaPlaylist = new Playlist(nombrePlaylist, espotifai.CancionesPorCriterio(criterio, valorCriterio));
+            if (criterio != "nombre" || criterio != "Nombre" || criterio != "NOMBRE" || criterio != "álbum" || criterio != "album" || criterio != "Álbum" || criterio != "Album" || criterio != "ÁLBUM" || criterio != "ALBUM" || criterio != "artista" || criterio != "Artista" || criterio != "ARTISTA" || criterio != "género" || criterio != "genero" || criterio != "Género" || criterio != "Genero" || criterio != "GÉNERO" || criterio != "GENERO")
+            {
+                Console.WriteLine("\nEl criterio que selecciono no existe\n");
+                return false;
+            }
+            List<Cancion> lista = this.CancionesPorCriterio(criterio, valorCriterio);
+            Playlist nuevaPlaylist = new Playlist(nombrePlaylist, lista);
             for (int i = 0; i < playlists.Count; i++)
             {
                 if (nuevaPlaylist.Name == playlists[i].Name)
@@ -147,18 +152,13 @@ namespace Laboratorio2RobertoVergaraC
                     Console.WriteLine("\nEl nombre de la Playlist ya existe, por lo que no se puede agregar\n");
                     return false;
                 }
-                else if (criterio != "nombre" || criterio != "Nombre" || criterio != "NOMBRE" || criterio != "álbum" || criterio != "album" || criterio != "Álbum" || criterio != "Album" || criterio != "ÁLBUM" || criterio != "ALBUM" || criterio != "artista" || criterio != "Artista" || criterio != "ARTISTA" || criterio != "género" || criterio != "genero" || criterio != "Género" || criterio != "Genero" || criterio != "GÉNERO" || criterio != "GENERO")
-                {
-                    Console.WriteLine("\nEl criterio que selecciono no existe\n");
-                    return false;
-                }
                 else
                 {
                     continue;
                 }
             }
-            playlists.Add(nuevaPlaylist);
             nuevaPlaylist.InformacionPlaylist();
+            playlists.Add(nuevaPlaylist);
             return true;
         }
 

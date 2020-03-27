@@ -26,7 +26,7 @@ namespace Laboratorio2RobertoVergaraC
             Console.WriteLine("Y las canciones que tiene son: \n");
             for (int i = 0; i < this.playlist.Count; i++)
             {
-                Console.WriteLine(this.playlist[i].Informacion());
+                Console.WriteLine(this.playlist[i].Informacion() + "\n");
             }
         }
     }

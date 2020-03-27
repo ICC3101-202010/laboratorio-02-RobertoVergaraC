@@ -56,7 +56,7 @@ namespace Laboratorio2RobertoVergaraC
                     string Criterio = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el valor que desea para su playlist:");
                     string Valor = Console.ReadLine();
-                    spotify.GenerarPlaylist(Criterio, Valor, nombrePLaylist);
+                    Console.WriteLine(spotify.GenerarPlaylist(Criterio, Valor, nombrePLaylist));
                 }
                 else if (option == "e")
                 {
