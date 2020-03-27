@@ -20,7 +20,7 @@ namespace Laboratorio2RobertoVergaraC
             this.playlist = playlist;
         }
 
-        public string InformacionPlaylist()
+        public void InformacionPlaylist()
         {
             Console.WriteLine("El nombre de la Playlist es: " + this.name);
             Console.WriteLine("Y las canciones que tiene son: \n");
@@ -28,7 +28,6 @@ namespace Laboratorio2RobertoVergaraC
             {
                 Console.WriteLine(this.playlist[i].Informacion());
             }
-            return "";
         }
     }
 }
