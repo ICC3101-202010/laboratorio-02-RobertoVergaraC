@@ -51,19 +51,16 @@ namespace Laboratorio2RobertoVergaraC
                 else if (option == "d")
                 {
                     Console.WriteLine("\nSeleccione el nombre que desea para su playlist:");
-                    string nombrePlaylist = Console.ReadLine();
-                    Console.WriteLine("\nSeleccione el criterio que desea para su playlist:");
-                    string criterioPlaylist = Console.ReadLine();
+                    string nombrePLaylist = Console.ReadLine();
+                    Console.WriteLine("\nSeleccione el criterio que desea para su playlist (nombre, álbum, artista, género):");
+                    string Criterio = Console.ReadLine();
                     Console.WriteLine("\nSeleccione el valor que desea para su playlist:");
-                    string valorPlaylist = Console.ReadLine();
-                    List<Cancion> ListaCanciones2 = spotify.CancionesPorCriterio(criterioPlaylist, valorPlaylist);
-                    Playlist playlist = new Playlist(nombrePlaylist,ListaCanciones2,criterioPlaylist,valorPlaylist);
-                    Console.WriteLine(playlist.InformacionPlaylistNombre());
-                    Console.WriteLine(playlist.InformacionCanciones());
+                    string Valor = Console.ReadLine();
+                    spotify.GenerarPlaylist(Criterio, Valor, nombrePLaylist);
                 }
                 else if (option == "e")
                 {
-                    Console.WriteLine(spotify.VerMisPLaylists());
+                    spotify.VerMisPlaylists();
                 }
                 else if (option == "f")
                 {
@@ -71,7 +68,7 @@ namespace Laboratorio2RobertoVergaraC
                 }
                 else
                 {
-                    Console.WriteLine("\nEsta opcion no es válida, ponga una que lo sea");
+                    Console.WriteLine("\nEsta opcion no es válida, ponga una que lo sea\n");
                 }
             }
             

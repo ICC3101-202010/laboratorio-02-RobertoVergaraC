@@ -9,37 +9,26 @@ namespace Laboratorio2RobertoVergaraC
     class Playlist
     {
         private string name;
-        private string criterio;
-        private string valor;
-
 
         private List<Cancion> playlist;
 
-        public Playlist(string name, List<Cancion> playlist,string criterio, string valor)
+        public string Name { get => name; set => name = value; }
+
+        public Playlist(string name, List<Cancion> playlist)
         {
-            this.name = name;
-            this.criterio = criterio;
-            this.valor = valor;
+            this.Name = name;
             this.playlist = playlist;
         }
 
-        public string InformacionCanciones()
+        public string InformacionPlaylist()
         {
+            Console.WriteLine("El nombre de la Playlist es: " + this.name);
+            Console.WriteLine("Y las canciones que tiene son: \n");
             for (int i = 0; i < this.playlist.Count; i++)
             {
-                Console.WriteLine("\n" + this.playlist[i].Informacion());
+                Console.WriteLine(this.playlist[i].Informacion());
             }
             return "";
-        }
-
-        public string InformacionPlaylistNombre()
-        {
-            return "\nNombre Playlist: " + this.name + "\n";
-        }
-
-        public string InformacionPlaylistCriterioyValor()
-        {
-            return "Criterio: " + this.criterio + "\nValor: " + this.valor + "\n";
         }
     }
 }
