@@ -59,12 +59,11 @@ namespace Laboratorio2RobertoVergaraC
                     }
                     if (playlist.Count == 0)
                     {
-                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su lista de canciones vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("\nSu lista de canciones con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
@@ -79,12 +78,11 @@ namespace Laboratorio2RobertoVergaraC
                     }
                     if (playlist.Count == 0)
                     {
-                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su lista de canciones vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("\nSu lista de canciones con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
@@ -99,12 +97,11 @@ namespace Laboratorio2RobertoVergaraC
                     }
                     if (playlist.Count == 0)
                     {
-                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su lista de canciones vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("\nSu lista de canciones con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
@@ -119,18 +116,17 @@ namespace Laboratorio2RobertoVergaraC
                     }
                     if (playlist.Count == 0)
                     {
-                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado, por lo que se le retornara su lista de canciones vacia\n");
+                        Console.WriteLine("\nNo se han encontrado canciones con el valor solicitado");
                         return playlist;
                     }
                     else
                     {
-                        Console.WriteLine("\nSu lista de canciones con criterio " + criterio + " de valor " + valor + " es:\n");
                         return playlist;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe\n");
+                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe");
                     return playlist;
                 }
             }
@@ -138,7 +134,7 @@ namespace Laboratorio2RobertoVergaraC
 
         public bool GenerarPlaylist(string criterio, string valorCriterio, string nombrePlaylist)
         {
-            List<Cancion> lista = this.CancionesPorCriterio(criterio, valorCriterio);
+            List<Cancion> lista = CancionesPorCriterio(criterio, valorCriterio);
             Playlist nuevaPlaylist = new Playlist(nombrePlaylist, lista);
             for (int i = 0; i < playlists.Count; i++)
             {

@@ -43,9 +43,13 @@ namespace Laboratorio2RobertoVergaraC
                     Console.WriteLine("\nSeleccione el valor que desea:");
                     string valor = Console.ReadLine();
                     List<Cancion> ListaCanciones = spotify.CancionesPorCriterio(criterio, valor);
-                    for (int i= 0; i < ListaCanciones.Count; i++)
+                    if (ListaCanciones.Count > 0)
                     {
-                        Console.WriteLine("\n" + ListaCanciones[i].Informacion() + "\n");
+                        Console.WriteLine("\nSu lista de canciones con criterio " + criterio + " de valor " + valor + " es: ");
+                        for (int i = 0; i < ListaCanciones.Count; i++)
+                        {
+                            Console.WriteLine("\n" + ListaCanciones[i].Informacion());
+                        }
                     }
                 }
                 else if (option == "d")
@@ -68,7 +72,7 @@ namespace Laboratorio2RobertoVergaraC
                 }
                 else
                 {
-                    Console.WriteLine("\nEsta opcion no es válida, ponga una que lo sea\n");
+                    Console.WriteLine("\nEsta opcion no es válida, ponga una que lo sea");
                 }
             }
             
