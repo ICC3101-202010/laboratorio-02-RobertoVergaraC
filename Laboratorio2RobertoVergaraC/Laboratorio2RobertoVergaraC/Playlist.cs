@@ -23,10 +23,10 @@ namespace Laboratorio2RobertoVergaraC
         public void InformacionPlaylist()
         {
             Console.WriteLine("\nEl nombre de la Playlist es: " + this.name);
-            Console.WriteLine("Y las canciones que tiene son: \n");
+            Console.WriteLine("Y las canciones que tiene son: ");
             for (int i = 0; i < this.playlist.Count; i++)
             {
-                Console.WriteLine(this.playlist[i].Informacion() + "\n");
+                Console.WriteLine("\n" + this.playlist[i].Informacion());
             }
         }
     }

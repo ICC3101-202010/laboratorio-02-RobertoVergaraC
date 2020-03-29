@@ -126,7 +126,7 @@ namespace Laboratorio2RobertoVergaraC
                 }
                 else
                 {
-                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe");
+                    Console.WriteLine("\n¡Error! El criterio seleccionado no existe\n");
                     return playlist;
                 }
             }
@@ -154,15 +154,23 @@ namespace Laboratorio2RobertoVergaraC
             }
             nuevaPlaylist.InformacionPlaylist();
             playlists.Add(nuevaPlaylist);
+            Console.WriteLine();
             return true;
         }
 
         public string VerMisPlaylists()
         {
-            Console.WriteLine("\nLa lista de playlists es:\n");
-            for (int i = 0; i < playlists.Count; i++)
+            if (playlists.Count > 0)
             {
-                playlists[i].InformacionPlaylist();
+                Console.WriteLine("\nLa lista de playlists es:");
+                for (int i = 0; i < playlists.Count; i++)
+                {
+                    playlists[i].InformacionPlaylist();
+                }
+            }
+            else
+            {
+                Console.WriteLine("\nNo hay ninguna playlist guardada");
             }
             return "";
         }
